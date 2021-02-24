@@ -93,6 +93,12 @@ H5PEditor.widgets.imageMultipleHotspotQuestion = H5PEditor.ImageMultipleHotspotQ
      */
     this.alreadySelectedFeedbackSemantics = [H5P.cloneObject(field.fields[5], true)];
 
+	/**
+	* Feedback Separate semantics to separate 1 (of) 2.
+	* @type {*[]}
+	*/
+	this.feedbackSeparator = [H5P.cloneObject(field.fields[6], true)];
+
     /**
      * Hotspot settings semantics, used to make the popup on hotspots.
      * @type {Object|Array}
@@ -187,6 +193,7 @@ H5PEditor.widgets.imageMultipleHotspotQuestion = H5PEditor.ImageMultipleHotspotQ
          H5PEditor.createFieldMarkup(this.field, content) +
       '  <div class="none-selected-feedback"></div>' +
       '  <div class="already-selected-feedback"></div>' +
+      '  <div class="feedback-separator"></div>' +
       '</div>';
 
     /**
@@ -219,6 +226,7 @@ H5PEditor.widgets.imageMultipleHotspotQuestion = H5PEditor.ImageMultipleHotspotQ
     var $dnbWrapper = $('.image-hotspot-dnb-wrapper', this.$editor);
     var $noneSelectedFeedback = $('.none-selected-feedback', this.$editor);
     var $alreadySelectedFeedback = $('.already-selected-feedback', this.$editor);
+	var $feedbackSeparator =  $('.feedback-separator', this.$editor);
 
     this.createToolbar($dnbWrapper);
     this.createDialog();
@@ -235,6 +243,8 @@ H5PEditor.widgets.imageMultipleHotspotQuestion = H5PEditor.ImageMultipleHotspotQ
     H5PEditor.processSemanticsChunk(this.numberHotspotsSemantics, this.params, $numberHotspots, this);
     H5PEditor.processSemanticsChunk(this.noneSelectedFeedbackSemantics, this.params, $noneSelectedFeedback, this);
     H5PEditor.processSemanticsChunk(this.alreadySelectedFeedbackSemantics, this.params, $alreadySelectedFeedback, this);
+	H5PEditor.processSemanticsChunk(this.feedbackSeparator, this.params, $feedbackSeparator, this);
+
   };
 
   /**
