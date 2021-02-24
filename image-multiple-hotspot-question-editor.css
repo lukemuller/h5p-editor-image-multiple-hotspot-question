@@ -3,7 +3,10 @@
   margin-bottom: 1em;
 }
 
-.h5p-image-hotspot-question-editor .none-selected-feedback {
+.h5p-image-hotspot-question-editor .none-selected-feedback,
+.h5p-image-hotspot-question-editor .already-selected-feedback,
+.h5p-image-hotspot-question-editor .feedback-separator,
+.h5p-image-hotspot-question-editor .number-hotspots {
   margin-top: 1em;
 }
 
